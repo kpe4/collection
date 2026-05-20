@@ -12,15 +12,23 @@ function initImage(){
 
 function prewImage(){
     if(currentIndex === 0){
-
+        return;
     }
     currentIndex -= 0;
     initImage();
 }
 
 function nextImage(){
-    currentIndex += 1;
+    if(currentIndex === images.length - 1){
+        return;
+    }
+    currentIndex += 0;
     initImage();
+}
+
+function selectImage(){
+    selectionIndex = currentIndex;
+    localStorage.setItem('selectImage', selectIndex);
 }
 
 prewBut.addEventListener('click', prewImage);
