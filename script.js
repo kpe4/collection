@@ -31,6 +31,12 @@ function selectImage(){
     localStorage.setItem('selectImage', selectIndex);
 }
 
+function loadIndex(){
+    console.log(localStorage.getItem([]));
+}
+
+selectBut.addEventListener('click', selectImage);
 prewBut.addEventListener('click', prewImage);
 nextBut.addEventListener('click', nextImage);
+loadIndex();
 initImage();
