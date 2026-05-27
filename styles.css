@@ -4,36 +4,32 @@ body{
 }
 
 .container{
+    display: flex;
     width: 100%;
     max-width: 600px;
     height: 60vh;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    background: linear-gradient(#2a2828, #000000)
+    background: linear-gradient(#ff0000, #ff8282);
 }
 
 .img-container{
     width: 90%;
     height: 90%;
     margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: auto;
     border-radius: 10px;
-    background: linear-gradient(#686868ff, #454545);
+    background: linear-gradient(#ff0000, #ff8282);
 }
-
 .controller-container{
-    flex:content;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 140px;
 }
 
 .controller-container > button{
+    
     width: 150px;
     height: 40px;
-    background-color: rgb(3, 101, 248);
+    background-color: #00000000;
 }

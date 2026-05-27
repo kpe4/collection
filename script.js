@@ -1,42 +1,39 @@
-const mainImage = document.getElementById("mainImage");
-const prewBut = document.getElementById("prewBut");
-const nextBut = document.getElementById("nextBut");
+const mainImage = document.getElementById("mainImage")
+const leftBtn = document.getElementById("left")
+const rightBtn = document.getElementById("right")
+const select = document.getElementById("select")
+const count = document.getElementById("count")
 
-const images = CONFIG.images; // [] array
-let currentIndex = 1;
+const images = CONFIG.image
+const maxIndex = images.length - 1
 
-function initImage(){
-    mainImage.src = images[currentIndex];
-    CountQueuingStrategy.textContent = `${currentIndex + 1} / ${images.length}`;
+let index = 0
+
+function selectf(){
+    localStorage.setItem('selectindex', index)
+
 }
 
-function prewImage(){
-    if(currentIndex === 0){
-        return;
+function changeImage(next) {
+    if (next) {if (index + 1 > maxIndex) {index = 0} else {index += 1} } else {if (index - 1 < 0) {index = maxIndex} else {index -= 1}}
+    load()  
+}
+
+function load(){
+    mainImage.src = images[index]
+    count.textContent = `${index + 1} / ${maxIndex + 1}`
+}
+function loadLocal(){
+    if(localStorage.getItem('selectindex') === null){
+        return
     }
-    currentIndex -= 0;
-    initImage();
+    index = parseInt(localStorage.getItem('selectindex'))
+    load()
+    
 }
 
-function nextImage(){
-    if(currentIndex === images.length - 1){
-        return;
-    }
-    currentIndex += 0;
-    initImage();
-}
-
-function selectImage(){
-    selectionIndex = currentIndex;
-    localStorage.setItem('selectImage', selectIndex);
-}
-
-function loadIndex(){
-    console.log(localStorage.getItem([]));
-}
-
-selectBut.addEventListener('click', selectImage);
-prewBut.addEventListener('click', prewImage);
-nextBut.addEventListener('click', nextImage);
-loadIndex();
-initImage();
+leftBtn.addEventListener("click", changeImage(false))
+rightBtn.addEventListener("click", changeImage(true))
+select.addEventListener('click', selectf)
+loadLocal()
+load()

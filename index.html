@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Collection</title>
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    
 </head>
 <body>
-    <div class="container" id="mainContainer">
-        <div class="img-container" id="imgContainer">
-            <img src="" id="mainImage" alt="Картинка">
+    <div class="container">
+        <div class="img-container" id="imgConteiner">
+            <img src="" class="img-thumbnail" id="mainImage" alt="">
         </div>
-
         <div class="controller-container" id="controllerContainer">
-            <button id="prewBut">⏪</button>
-            <button id="nextBut">⏩</button>
+            <button class="btn btn-secondary" id="left">⬅️</button>
+            <button class="btn btn-secondary" id="select">✅</button>
+            <button class="btn btn-secondary" id="right">➡️</button>
+            <samp id="count"></samp>
         </div>
-        <span id="count"></span>
     </div>
     <script src="config.js"></script>
     <script src="script.js"></script>
+    
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
